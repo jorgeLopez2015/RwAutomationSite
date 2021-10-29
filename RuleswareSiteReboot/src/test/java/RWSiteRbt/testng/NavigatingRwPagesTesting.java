@@ -2,10 +2,11 @@ package RWSiteRbt.testng;
 
 import java.util.concurrent.TimeUnit;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-import com.utils.DataProviderContactInfo;
+import com.utils.DataProviderRWSite;
 
 import factory.DriverConf;
 import rw.pages.ContactUsPage;
@@ -60,7 +61,7 @@ public class NavigatingRwPagesTesting extends DriverConf{
 		hpage.clickingSlideButtons();
 	}
 	
-	@Test(enabled=false, dataProvider="RequiredContactInformation", dataProviderClass=DataProviderContactInfo.class)
+	@Test(enabled=false, dataProvider="RequiredContactInformation", dataProviderClass=DataProviderRWSite.class)
 	public void getinTouchPage(String fname, String lname, String email, String phone, String website, String company, String jobTitle, String message) {
 		Home hpage = new Home(driver);
 		ContactUsPage cpage = new ContactUsPage(driver);
@@ -68,13 +69,22 @@ public class NavigatingRwPagesTesting extends DriverConf{
 		cpage.fillingContactInformation(fname, lname, email, phone, website, company, jobTitle, message);
 	}
 	
-	@Test(enabled=true, priority=0, dataProvider="ExpertiseMenuOptions", dataProviderClass=DataProviderContactInfo.class)
+	@Test(enabled=false, priority=0, dataProvider="ExpertiseMenuOptions", dataProviderClass=DataProviderRWSite.class)
 	public void reviewHomeExpertiseMenu(int option, String oldUrl) throws InterruptedException {
 		SoftAssert sassert = new SoftAssert();
 		Home hpage = new Home(driver);
 		String getUrl = hpage.reviewingExpertiseMenu(option);
 		System.out.println(getUrl);
 		sassert.assertEquals(oldUrl, getUrl, "Was not clicked on expected sub menu option");
+	}
+	
+	@Test(enabled=true, dataProvider="MediaButtons", dataProviderClass=DataProviderRWSite.class)
+	public void reviewMediaButtons(int option, String mediaUrl) throws InterruptedException {
+		//SoftAssert sassert = new SoftAssert();
+		Home hpage = new Home(driver);
+		String getUrl = hpage.clickingMediaButtons(option);
+		//sassert.assertEquals(mediaUrl, getUrl, "Was not clicked on expected sub menu option");
+		Assert.assertEquals(mediaUrl, getUrl);
 	}
 
 }

@@ -2,7 +2,7 @@ package com.utils;
 
 import org.testng.annotations.DataProvider;
 
-public class DataProviderContactInfo {
+public class DataProviderRWSite {
 	
 	@DataProvider(name = "RequiredContactInformation")
 	public Object[][] dataSetContactInfo(){
@@ -20,6 +20,17 @@ public class DataProviderContactInfo {
 					{2, "https://rulesware.com/industries/financial/"},
 					{3, "https://rulesware.com/landing-page-customer-decision-hub-cdh/"},
 					{4, "https://rulesware.com/services/"}
+				};
+	}
+	
+	@DataProvider(name = "MediaButtons")
+	public Object[][] dataSetMediaButtons(){
+		return new Object[][]
+				{
+					{1, "https://www.facebook.com/Rulesware/"},
+					{2, "https://www.instagram.com/rulesware/"},
+					{3, "https://www.linkedin.com/company/rulesware?trk=biz-companies-cym"},
+					{4, "https://www.youtube.com/user/Rulesware"}
 				};
 	}
 

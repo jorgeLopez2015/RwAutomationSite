@@ -2,6 +2,7 @@ package rw.pages;
 
 
 
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -75,10 +76,10 @@ public class Home extends Wrapper {
     By rulesware_go_home_img= By.xpath("//img[@alt='RULESWARE'");
     By privacy_policy_link= By.cssSelector("a[href='https://rulesware.com/privacy-policy/']");
     By Terms_of_use_link= By.cssSelector("a[href='https://rulesware.com/terms-of-use/']");
-    By Facebook_icon= By.cssSelector("a[href='https://www.facebook.com/Rulesware/']");
-    By Instagram_icon= By.cssSelector("a[href='https://www.instagram.com/rulesware/']");
-    By LinkedIn_icon= By.cssSelector("a[href='https://www.linkedin.com/company/rulesware?trk=biz-companies-cym']");
-    By YouTube_icon= By.cssSelector("a[href='https://www.youtube.com/user/Rulesware']");
+    By facebook_icon= By.cssSelector("a[href='https://www.facebook.com/Rulesware/']");
+    By instagram_icon= By.cssSelector("a[href='https://www.instagram.com/rulesware/']");
+    By linkedIn_icon= By.cssSelector("a[href='https://www.linkedin.com/company/rulesware?trk=biz-companies-cym']");
+    By youTube_icon= By.cssSelector("a[href='https://www.youtube.com/user/Rulesware']");
     
     
     //scrolling down through home page
@@ -150,6 +151,39 @@ public class Home extends Wrapper {
     	urlOpt = getUrl();
     	gobacktoMain();
     	return urlOpt;
+    }
+    
+    public String clickingMediaButtons(int option) throws InterruptedException {
+    	String mediaUrl = null;
+    	String parent = driver.getWindowHandle();
+    	switch(option) {
+			case 1:
+				moveTo(facebook_icon);
+				click(facebook_icon);
+				break;
+			case 2:
+				moveTo(instagram_icon);
+				click(instagram_icon);
+				break;
+			case 3:
+				moveTo(linkedIn_icon);
+				click(linkedIn_icon);
+				break;
+			case 4:
+				moveTo(youTube_icon);
+				click(youTube_icon);
+				break;
+		}
+    	Set<String> mSites = driver.getWindowHandles();
+		for(String child:mSites) {
+			if(!parent.equalsIgnoreCase(child)) {
+				driver.switchTo().window(child);
+				mediaUrl= getUrl();
+				driver.close();
+			}
+		}
+		driver.switchTo().window(parent);
+    	return mediaUrl;
     }
     
     
