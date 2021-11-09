@@ -30,7 +30,7 @@ public class Home extends Wrapper {
 	//Solutions menu
 	By solutions_menu= By.xpath("//href[text()='Solutions']");
 	//Careers menu
-	By careers_page= By.xpath("//href[text()='Careers']");
+	By careers_page= By.xpath("//a[text()='Careers']");
 	//Resources menu
 	By resources_menu= By.xpath("//a[text()='Resources']");
 	
@@ -184,6 +184,11 @@ public class Home extends Wrapper {
 		}
 		driver.switchTo().window(parent);
     	return mediaUrl;
+    }
+    
+    public void clickingCareersMenu() {
+    	click(0, careers_page);
+    	//click(careers_page);
     }
     
     

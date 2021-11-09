@@ -33,5 +33,15 @@ public class DataProviderRWSite {
 					{4, "https://www.youtube.com/user/Rulesware"}
 				};
 	}
+	
+	@DataProvider(name = "RequiredAppyInformation")
+	public Object[][] dataSetApplyInfo(){
+		return new Object[][]
+				{
+					{"Dany", "Magana", "daniela.magana@rulesware.com", "50370872828", "www.google.com", "Google Co", "QA Engineer", "Automating Web page for testing purposes"},
+				};
+	}
+	
+	
 
 }

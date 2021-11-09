@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="RWSiteRbt.testng.NavigatingRwPagesTesting">
+      <class name="RWSiteRbt.testng.TestingCareersPage">
         <methods>
           <include name="ConfiguringBrowser"/>
-          <include name="reviewHomeExpertiseMenu" invocation-numbers="1 2 3"/>
+          <include name="applyingRwJobs"/>
           <include name="CloseBrowser"/>
         </methods>
-      </class> <!-- RWSiteRbt.testng.NavigatingRwPagesTesting -->
+      </class> <!-- RWSiteRbt.testng.TestingCareersPage -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

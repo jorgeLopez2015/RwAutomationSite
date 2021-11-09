@@ -1,10 +1,17 @@
 package rw.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 
-public class CareersPage {
+import com.utils.Wrapper;
+
+public class CareersPage extends Wrapper {
 	
-	 //Header 
+	 public CareersPage(WebDriver driver) {
+		super(driver);
+		// TODO Auto-generated constructor stub
+	}
+	//Header 
 	By rw_img_home= By.xpath("//img[@class='attachment-large size-large']");
 	By expertise_menu= By.xpath("//href[text()='Expertise']");
 	By solutions_menu= By.xpath("//href[text()='Solutions']");
@@ -70,7 +77,10 @@ public class CareersPage {
   	By LinkedIn_icon= By.cssSelector("a[href='https://www.linkedin.com/company/rulesware?trk=biz-companies-cym']");
   	By YouTube_icon= By.cssSelector("a[href='https://www.youtube.com/user/Rulesware']");
 	
-	
+	public void applyingPosition() {
+		moveTo(jobs_section_title);
+		
+	}
 	
 	
 	

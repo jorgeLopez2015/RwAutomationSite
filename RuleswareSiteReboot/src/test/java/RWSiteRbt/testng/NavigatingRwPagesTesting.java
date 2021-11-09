@@ -86,5 +86,6 @@ public class NavigatingRwPagesTesting extends DriverConf{
 		//sassert.assertEquals(mediaUrl, getUrl, "Was not clicked on expected sub menu option");
 		Assert.assertEquals(mediaUrl, getUrl);
 	}
+	
 
 }
