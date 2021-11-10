@@ -53,6 +53,10 @@ public class AboutPage {
 		By Instagram_icon = By.cssSelector("a[href='https://www.instagram.com/rulesware/']");
 		By LinkedIn_icon = By.cssSelector("a[href='https://www.linkedin.com/company/rulesware?trk=biz-companies-cym']");
 		By YouTube_icon = By.cssSelector("a[href='https://www.youtube.com/user/Rulesware']");
+		
+		
+		
+		//test de push
 	    
 
 }
