@@ -57,6 +57,8 @@ public class AboutPage {
 		
 		
 		//test de push
+		
+		test2
 	    
 
 }
